@@ -3,7 +3,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 
+app.use(express.static("public"));
 
+app.set('view engine', 'ejs');
+app.set("views", "./views");
 
 const cors = require("cors");
 app.use(cors());
@@ -18,7 +21,7 @@ app.listen(PORT, function () {
 })
 
 app.get('/', function (req, res) {
-    res.send('Server Quản Lý Sinh Viên');
+    res.render('index');
 });
 
 app.post('/login', function (req, res) {

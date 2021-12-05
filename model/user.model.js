@@ -8,7 +8,6 @@ const UserShema = mongoose.Schema({
     note: Array,
     notice: Array,
     coin: Object,
-
 });
 
 module.exports = mongoose.model('user', UserShema);
