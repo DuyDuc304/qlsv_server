@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 
 
@@ -18,7 +18,7 @@ app.listen(PORT, function () {
 })
 
 app.get('/', function (req, res) {
-    res.send('Đức óc chó');
+    res.send('Server Quản Lý Sinh Viên');
 });
 
 app.post('/login', function (req, res) {
