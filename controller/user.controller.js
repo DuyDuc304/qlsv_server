@@ -37,6 +37,9 @@ module.exports.writeNote = async function (data) {
     var json = await UserModel.updateOne({ _id: data.id }, { $set: { note: list } });
     user = await UserModel.findById(data.id);
     list = user.note;
+    if (!list) {
+        list = [];
+    }
     return json, list;
 }
 

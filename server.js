@@ -74,6 +74,7 @@ app.post('/note', function (req, res) {
             res.json({ err: 2, data: {} });
             return;
         }
+
         res.json({ err: 0, data: value[1] });
 
     });
